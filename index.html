@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>온앤미 × 진성재 협업 제안</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f5f1;
+  --paper: #ffffff;
+  --warm: #efece5;
+  --ink: #1a1916;
+  --ink2: #4c4a44;
+  --ink3: #9c9a94;
+  --g: #1d5c38;
+  --g-bg: rgba(29,92,56,0.07);
+  --g-border: rgba(29,92,56,0.2);
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Noto Sans KR',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(246,245,241,0.97);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:720px;margin:0 auto;padding:0 28px;
+  display:flex;gap:0;overflow-x:auto;height:46px;align-items:center;
+}
+.nav a{
+  padding:0 14px;height:100%;display:flex;align-items:center;
+  font-size:11px;font-weight:500;letter-spacing:.04em;
+  color:var(--ink3);text-decoration:none;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:all .15s;
+}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--g)}
+
+.w{max-width:720px;margin:0 auto;padding:0 28px}
+
+/* COVER */
+.cover{padding:72px 28px 56px;max-width:720px;margin:0 auto}
+.cover-tag{
+  font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--g);border:1px solid var(--g-border);background:var(--g-bg);
+  padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:18px;
+}
+.cover h1{
+  font-size:clamp(22px,3.5vw,32px);font-weight:700;
+  line-height:1.25;color:var(--ink);margin-bottom:10px;letter-spacing:-.02em;
+}
+.cover-sub{font-size:13px;color:var(--ink2);line-height:1.85;margin-bottom:32px;max-width:460px}
+.cover-pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  font-size:11px;font-weight:500;color:var(--ink2);
+  background:var(--paper);border:1px solid var(--border);
+  padding:5px 12px;border-radius:4px;
+}
+
+/* SEC */
+.sec{padding:52px 0;border-top:1px solid var(--border)}
+.sec.bg{background:var(--paper)}
+.sec-n{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
+.sec-h{font-size:clamp(16px,2.4vw,20px);font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+.sec-d{font-size:13px;color:var(--ink2);margin-bottom:24px;line-height:1.8;max-width:460px}
+
+/* TABLE */
+.tw{overflow-x:auto;border-radius:8px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:12px;background:var(--paper);min-width:440px}
+th{
+  background:var(--warm);padding:10px 14px;text-align:left;
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink2);border-bottom:1px solid var(--border);
+}
+td{
+  padding:13px 14px;border-bottom:1px solid var(--border2);
+  color:var(--ink2);vertical-align:top;line-height:1.65;
+}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg)}
+td:first-child{font-weight:500;color:var(--ink);white-space:nowrap;width:100px}
+.chip{
+  display:inline-block;font-size:10px;font-weight:500;
+  padding:2px 7px;border-radius:3px;white-space:nowrap;
+  background:var(--g-bg);color:var(--g);border:1px solid var(--g-border);
+}
+
+/* CALLOUT */
+.co{
+  margin-top:14px;
+  border-left:3px solid var(--g);background:var(--g-bg);
+  border-radius:0 7px 7px 0;padding:13px 16px;
+  font-size:12px;color:var(--ink2);line-height:1.8;
+}
+.co strong{color:var(--ink);font-weight:500}
+
+/* RULE BOX */
+.rulebox{
+  background:var(--ink);color:#f5f2eb;
+  border-radius:8px;padding:22px 24px;margin-bottom:14px;
+}
+.rb-title{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,242,235,0.38);margin-bottom:14px}
+.rb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+@media(max-width:460px){.rb-grid{grid-template-columns:1fr}}
+.rb-row{}
+.rb-k{font-size:10px;color:rgba(245,242,235,0.4);letter-spacing:.05em;margin-bottom:3px;font-weight:500}
+.rb-v{font-size:12px;color:rgba(245,242,235,0.86);line-height:1.6}
+
+/* COLS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+@media(max-width:500px){.cols{grid-template-columns:1fr}}
+.col{background:var(--paper);border:1px solid var(--border);border-radius:8px;padding:16px 16px}
+.col-k{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.col-k.g{color:var(--g)}
+.col-k.ink{color:var(--ink2)}
+.col ul{list-style:none}
+.col li{
+  font-size:12px;color:var(--ink2);
+  padding:7px 0;border-bottom:1px solid var(--border2);
+  line-height:1.55;display:flex;gap:7px;
+}
+.col li:last-child{border-bottom:none;padding-bottom:0}
+.col li::before{content:'—';color:var(--ink3);flex-shrink:0;font-size:11px}
+
+/* CLOSING */
+.cl{
+  background:var(--paper);border:1px solid var(--border);
+  border-radius:8px;padding:20px 22px;
+}
+.cl-k{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+.cl-t{font-size:13px;color:var(--ink2);line-height:1.9}
+.cl-t strong{color:var(--ink);font-weight:500}
+
+/* BONUS */
+.bonus{padding:44px 0 60px;border-top:2px dashed var(--border)}
+.bonus-h{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.bonus-sub{font-size:12px;color:var(--ink3);margin-bottom:18px}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:500px){.bgrid{grid-template-columns:1fr}}
+.bc{background:var(--paper);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.bc-h{padding:11px 15px;background:var(--warm);border-bottom:1px solid var(--border)}
+.bc-t{font-size:12px;font-weight:600;color:var(--ink)}
+.bc-s{font-size:11px;color:var(--ink3);margin-top:1px}
+.bc-b{padding:15px;font-size:12px;color:var(--ink2);line-height:1.85;white-space:pre-line}
+.bc-b strong{color:var(--ink);font-weight:500}
+
+footer{text-align:center;padding:22px;font-size:11px;color:var(--ink3);border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#p1">① 구조 개요</a>
+    <a href="#p2">② IP 기획 협업</a>
+    <a href="#p3">③ 기획 대행</a>
+    <a href="#p4">④ 운영 원칙</a>
+  </div>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-tag">협업 제안</div>
+  <h1>온앤미 × 진성재<br>협업 제안서</h1>
+  <p class="cover-sub">
+    별도 대행사로 운영하면서 온앤미와 함께합니다.<br>
+    IP 기획은 공동으로, 급한 실무는 대행으로 — 두 가지 방식으로 연결됩니다.
+  </p>
+  <div class="cover-pills">
+    <span class="pill">별도 사업체 운영</span>
+    <span class="pill">IP 공동기획</span>
+    <span class="pill">기획 대행 (필요 시)</span>
+    <span class="pill">사무실 1자리 활용</span>
+  </div>
+</div>
+
+<!-- ══ P1: 구조 개요 ══ -->
+<div class="sec" id="p1">
+<div class="w">
+  <div class="sec-n">Page 01</div>
+  <div class="sec-h">한 줄로 정리하면 이렇습니다</div>
+  <p class="sec-d">복잡하지 않습니다. 구조는 단순합니다.</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>진성재 정체</td>
+          <td>별도 대행사로 운영. 진로 강사 등 다양한 활동을 병행하는 독립 사업체</td>
+        </tr>
+        <tr>
+          <td>온앤미와의 관계</td>
+          <td>직원 아님. 온앤미 사무실 한 자리를 사용하며 함께 일하는 협업 구조</td>
+        </tr>
+        <tr>
+          <td>협업 방식 ①</td>
+          <td>온앤미가 원하는 IP 기획을 공동으로 진행. 실비 외 인건비는 청구 안 함 <span class="chip">공동기획</span></td>
+        </tr>
+        <tr>
+          <td>협업 방식 ②</td>
+          <td>온앤미에 급한 기획 건이 생겼을 때 기획비·PM비를 받고 대행 처리 <span class="chip">기획 대행</span></td>
+        </tr>
+        <tr>
+          <td>전제</td>
+          <td>온앤미가 대행을 줄 의무 없음. 진성재도 스케줄상 불가하면 수락 안 함</td>
+        </tr>
+        <tr>
+          <td>이탈 조건</td>
+          <td>온앤미 직원 불만 발생 또는 온앤미 성장에 문제가 된다고 판단되면 즉시 빠짐</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="co">
+    온앤미 사무실을 공간으로 사용하지만 <strong>온앤미 소속이 아닙니다.</strong><br>
+    온앤미의 성장에 도움이 되는 선에서만 이 구조가 유지됩니다.
+  </div>
+</div>
+</div>
+
+<!-- ══ P2: IP 기획 ══ -->
+<div class="sec bg" id="p2">
+<div class="w">
+  <div class="sec-n">Page 02</div>
+  <div class="sec-h">IP 기획 협업</div>
+  <p class="sec-d">온앤미가 하고 싶은 IP 기획을 시작으로 함께 실험합니다.</p>
+
+  <div class="tw">
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>시작점</td>
+          <td>온앤미가 원하는 IP 기획 아이템부터 시작</td>
+        </tr>
+        <tr>
+          <td>역할</td>
+          <td>기획·설계·실험은 진성재가 주도. 온앤미는 방향 결정 및 자원 활용</td>
+        </tr>
+        <tr>
+          <td>비용</td>
+          <td>실제 집행 비용만 온앤미 부담. 진성재 인건비는 청구하지 않음</td>
+        </tr>
+        <tr>
+          <td>레퍼런스</td>
+          <td>완성된 IP는 온앤미·진성재 공동 레퍼런스로 활용</td>
+        </tr>
+        <tr>
+          <td>확장</td>
+          <td>지자체·기업·학교 제안으로 이어질 경우 수익 배분 구조는 사전 협의</td>
+        </tr>
+        <tr>
+          <td>로컬 연계</td>
+          <td>현재 개발 중인 로컬 관광 플랫폼 <strong>누비오</strong> 활용. 5월 서비스 완성 · 6월 프로그램 업로드 예정. 완성 후 온앤미 지역축제 제안서에 바로 연계 가능</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="co">
+    온앤미는 <strong>인건비 없이 IP 기획을 실험</strong>할 수 있습니다.<br>
+    진성재는 이 과정에서 실제 IP 레퍼런스를 쌓습니다. 양쪽 모두 실이 있는 구조입니다.
+  </div>
+</div>
+</div>
+
+<!-- ══ P3: 기획 대행 ══ -->
+<div class="sec" id="p3">
+<div class="w">
+  <div class="sec-n">Page 03</div>
+  <div class="sec-h">기획 대행</div>
+  <p class="sec-d">온앤미에 급한 기획 건이 생겼을 때, 기획비·PM비를 받고 처리합니다.</p>
+
+  <div class="tw" style="margin-bottom:14px">
+    <table>
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>대상 업무</td>
+          <td>제안서·기획안·운영안·큐시트 작성 / 현장 운영 지원</td>
+        </tr>
+        <tr>
+          <td>비용</td>
+          <td>기획비·PM비 등 건별 사전 협의 후 진행</td>
+        </tr>
+        <tr>
+          <td>강점</td>
+          <td>온앤미 구조를 이미 알고 있어 별도 브리핑 없이 바로 처리 가능</td>
+        </tr>
+        <tr>
+          <td>온앤미 의무</td>
+          <td>없음. 필요할 때 제안하면 됨</td>
+        </tr>
+        <tr>
+          <td>진성재 의무</td>
+          <td>없음. 스케줄상 불가하면 수락 안 함. 수락한 건은 마감까지 책임</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="co">
+    <strong>필수가 아닙니다.</strong> 온앤미가 필요할 때 제안하고, 가능하면 진행하는 구조입니다.<br>
+    단, 수락한 일은 중간에 던지지 않습니다.
+  </div>
+</div>
+</div>
+
+<!-- ══ P4: 운영 원칙 ══ -->
+<div class="sec bg" id="p4">
+<div class="w">
+  <div class="sec-n">Page 04</div>
+  <div class="sec-h">운영 원칙</div>
+  <p class="sec-d">이 구조가 유지되기 위해 서로 지켜야 할 기본 전제입니다.</p>
+
+  <div class="rulebox">
+    <div class="rb-title">기본 원칙</div>
+    <div class="rb-grid">
+      <div class="rb-row">
+        <div class="rb-k">소속</div>
+        <div class="rb-v">온앤미 직원 아님. 별도 사업체로 운영</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-k">공간</div>
+        <div class="rb-v">온앤미 사무실 한 자리 사용. 상주 근무 아님</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-k">스케줄</div>
+        <div class="rb-v">자율 운영. 결과물과 마감으로 책임</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-k">병행 활동</div>
+        <div class="rb-v">진로 강사 등 다양한 독립 활동 병행</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-k">이탈 조건</div>
+        <div class="rb-v">온앤미 직원 불만 또는 성장에 문제 시 즉시 빠짐</div>
+      </div>
+      <div class="rb-row">
+        <div class="rb-k">방향</div>
+        <div class="rb-v">대표님 성장을 돕고, 나도 내 활동으로 성장하는 구조</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="col-k g">온앤미가 얻는 것</div>
+      <ul>
+        <li>인건비 없이 IP 기획 실험 가능</li>
+        <li>급한 기획 건 처리 인력 확보</li>
+        <li>온앤미 구조 아는 사람 — 브리핑 불필요</li>
+        <li>고정 부담 없이 유연하게 활용</li>
+        <li>공동 IP 레퍼런스 축적</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="col-k ink">진성재가 얻는 것</div>
+      <ul>
+        <li>대행 수익으로 생계 기반 확보</li>
+        <li>IP 기획 레퍼런스 축적</li>
+        <li>사무실 공간 활용</li>
+        <li>사업 노하우를 현장에서 배움</li>
+        <li>자율적 스케줄로 독립 활동 병행</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cl">
+    <div class="cl-k">마무리</div>
+    <div class="cl-t">
+      구조는 단순합니다.<br>
+      <strong>진성재는 별도 대행사로 움직이고, 온앤미 사무실 한 자리를 쓰며 IP 기획을 함께 합니다.</strong><br>
+      급한 실무가 생기면 대행으로 처리하고, 맡은 일은 끝까지 책임집니다.<br><br>
+      온앤미 성장에 방해가 되는 순간 바로 빠지겠습니다.<br>
+      그 전까지는 대표님 성장을 돕고, 저도 제 활동으로 성장하는 구조를 만들고 싶습니다.
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>온앤미 × 진성재 협업 제안서</footer>
+
+</body>
+</html>
